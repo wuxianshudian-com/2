@@ -1,0 +1,79 @@
+                                    域名查询/自建dns/查询dns出口ip
+                                          #15376296474
+  
+  
+ 1-1 自己建立服务器，然后在服务器上进行操作。本域@被自己服务器托管。
+ 
+ 首先必须要在自己的域名或者是其他域名上添加a记录解析。 如果域名在注册商那里，就在注册商那修改。如果使用第三方解析，就在第三方处解析修改。
+ wuxianshudia.com 本域子域
+ cache A 116.62.168.205
+ dnscache A 116.62.168.205
+ 
+ wuxianshudia.top 子域
+ cache A 116.62.168.205
+ dnscache A 116.62.168.205
+ 
+ wuxianshudia.cn 子域
+ cache  A 116.62.168.205
+ dnscache A 116.62.168.205
+ 
+  然后在各大域名后台 注册主机名。注意有些服务商不会检查，但是大部分都会检查。如果不添加的话，有可能报告，同时国内的可能会付费。建议使用阿里云，腾讯云  华为云。
+  国内就喜欢坑人，吃人血馒头。我老是想起过过去的事情  我就想问一下这个社会到底咋了？
+  
+  
+  然后在域名后台就是阿里云后台直接修改就可以了。
+  使用本域
+  cache.wuxianshudian.com
+  dnscache.wuxianshudian.com
+  使用cn域
+  cache.wuxianshudian.cn
+  dnscache.wuxianshudian.cn
+  使用top域名
+  cache.wuxianshudian.top
+  dnscache.wuxianshudian.top
+  
+  这里可以使用任意子域 不是只有cache和dnscache。也可以同时使用多个域名!修改解析需要运营商公共DNS缓存过期。也就是ttl时间大概是从几分钟到几天。建议搭建服务器的时候，把配置文件的Tl改小一点。这样子可以尽快生效。
+  
+  
+  1-2  自己建立服务器，托管子域 www
+  
+  还是和主域一样，添加a记录指向服务器。如果解析在注册商那里，就在注册商那修改。如果使用第三方解析，就在第三方解析修改。
+  
+  @ 作服务器
+  @ A 116.62.168.205
+  www ns wuxianshudia.com
+  
+  cache A 116.62.168.205
+  dnscache A 116.62.168.205
+  www ns cache.wuxianshudian.com
+  www ns dnscache.wuxianshudian.com
+  
+  使用wuxianshudian.cn
+  @ A 116.62.168.205
+  www ns wuxianshudia.cn
+  
+  cache A 116.62.168.205
+  dnscache A 116.62.168.205
+  www ns cache.wuxianshudian.cn
+  www ns dnscache.wuxianshudian.cn
+  
+  
+  使用wuxianshudian.top
+  @ A 116.62.168.205
+  www ns wuxianshudia.top
+  
+  cache A 116.62.168.205
+  dnscache A 116.62.168.205
+  www ns cache.wuxianshudian.top
+  www ns dnscache.wuxianshudian.top
+  
+  同样这个修改解析需要运营商解析更新。取决于ttl大小。大概从几分钟到几天!所以配置服务器的时候，可以把配置文件的ttl设置小一些就可以尽快更新。
+  
+ 
+  
+  
+  
+  
+  
+ 
+ 
