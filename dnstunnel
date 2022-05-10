@@ -1,0 +1,145 @@
+使用的域
+主域
+wuxianshudian.com
+wuxianshudian.cn
+wuxianshudian.top
+子域
+tun.wuxianshudian.com
+tunnel.wuxianshudian.com
+dnstunnel.wuxianshudian.com
+tun.wuxianshudian.cn
+tunnel.wuxianshudian.cn
+dnstunnel.wuxianshudian.cn
+tun.wuxianshudian.top
+tunnel.wuxianshudian.top
+dnstunnel.wuxianshudian.top
+
+使用ddns指向自己的服务器
+ddns.wuxianshudian.com
+ddns.wuxianshudian.cn
+ddns.wuxianshudian.top
+
+登陆密码 shihuawei
+注:因为做网站和其他服务不能够托管解析。1容易被攻击，2速度比较慢 3要不只能用于dns隧道或者使用dns转发从而不影响其他服务。这个解析纯粹是测试！ 
+虽然我的技术可以阻止一切黑客。因为身体和环境原因，但是这个域名最终还是用来交易的。我真的很担心又没卖出去之后会被中间人攻击。虽然我可以通过防
+火墙关闭和屏蔽端口和地址或者关闭服务器！如果对方用来做中间人攻击或者是找回解析，那么服务器地址就可见了。就可以无限制的发动洪水或漏洞攻击。
+
+
+
+
+
+
+
+
+
+
+
+特别说明 
+如果解析在服务商那里，就在服务商那里操作加添加。如果是第三方解析，那就在第三方解析添加！更换解析需要运营商和公共dns同步。这个取决于ttl大小。
+可以在服务器设置或提前解析的时候，把ttl设置比较小一些，就可以加速更新。
+
+               使用主域 wuxianshudian.com
+               
+这是演示需要，没办法。正常情况下我只用那三个子域作远程管理及绕过防火墙/绕过网络认证。
+
+首先先添加一个a记录指向服务器 
+
+wuxianshudian.com
+tun A 116.62.168.205
+tunnel A 116.62.168.205
+dnstunnel A 116.62.168.205
+
+wuxianshudian.cn
+tun A 116.62.168.205
+tunnel A 116.62.168.205
+dnstunnel A 116.62.168.205
+
+wuxianshudian.top
+tun A 116.62.168.205
+tunnel A 116.62.168.205
+dnstunnel A 116.62.168.205
+
+然后在域名注册商那里注册主机名。有的服务商检查，如果不是注册的就不能够修改。注意有些服务商不会检查直接生效，有些服务商还需要付费或者坑你！
+这里也可以不使用tun tunnel dnstunnel 为主机名，其实这里可以使用任意主机名都可以。我这只是为了也是需要，所以才这么添加的！
+
+然后在域名注册商后台修改dns。
+wuxianshudian.com
+tun.wuxianshudian.com
+相当于
+@ ns tun.wuxianshudian.com
+tunel.wuxianshudian.com
+相当于
+@ ns tunel.wuxianshudian.com
+dnstunel.wuxianshudian.com
+相当于
+@ ns dnstunel.wuxianshudian.com
+
+
+wuxianshudian.cn
+tun.wuxianshudian.cn
+相当于
+@ ns tun.wuxianshudian.cn
+tunel.wuxianshudian.cn
+相当于
+@ ns tunel.wuxianshudian.cn
+dnstunel.wuxianshudian.cn
+相当于
+@ ns dnstunel.wuxianshudian.cn
+
+wuxianshudian.top
+tun.wuxianshudian.top
+相当于
+@ ns tun.wuxianshudian.top
+tunel.wuxianshudian.top
+相当于
+@ ns tunel.wuxianshudian.top
+dnstunel.wuxianshudian.top
+相当于
+@ ns dnstunel.wuxianshudian.top
+
+
+
+            使用wuxianshudian.com 子域
+首先这个不需要注册主机名，直接添加解析 服务器没有问题就能直接用了。
+首先先添加a记录 指向服务器！@ 为使用主域 www为使用子域。
+wuxianshudian.com
+@ a  116.62.168.205
+www.wuxianshudian.com
+www a 116.62.168.205
+
+tun ns wuxianshudian.com #@
+tun ns www.wuxianshudian.com #www
+tunnel ns wuxianshudian.com #@
+tunnel ns www.wuxianshudian.com#www
+dnstunnel ns wuxianshudian.com#@
+dnstunnel ns www.wuxianshudian.com#www
+
+wuxianshudian.cn
+@ a  116.62.168.205
+www.wuxianshudian.cn
+www a 116.62.168.205
+
+tun ns wuxianshudian.cn #@
+tun ns www.wuxianshudian.cn #www
+tunnel ns wuxianshudian.cn #@
+tunnel ns www.wuxianshudian.cn#www
+dnstunnel ns wuxianshudian.cn#@
+dnstunnel ns www.wuxianshudian.cn#www
+
+
+wuxianshudian.top
+@ a  116.62.168.205
+www.wuxianshudian.top
+www a 116.62.168.205
+
+tun ns wuxianshudian.top #@
+tun ns www.wuxianshudian.top #www
+tunnel ns wuxianshudian.top #@
+tunnel ns www.wuxianshudian.top#www
+dnstunnel ns wuxianshudian.top#@
+dnstunnel ns www.wuxianshudian.top#www
+
+这个和主机一样，也不是非要强制使用这个主机名。这个也可以使用任意主机名。域名也可以使用一个也可以使用多个域名。使用多个域名的好处除了负载平衡方面，还可以防止域名出库的造成无法解析！
+
+
+
